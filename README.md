@@ -63,12 +63,21 @@ Automated flow for SauceDemo:
 
 ## API Automation Scenario
 
-Automated flow for ReqRes API:
+Automated API test scenarios for ReqRes:
 
-1. Register user and generate token
-2. Extract and reuse token
-3. Fetch user details using authenticated request
-4. Validate response data
+### Test 1: Authentication & Token Generation
+
+- POST `/api/register`
+- Validate status code `200`
+- Extract authentication token from response
+- Store token for subsequent API requests
+
+### Test 2: Authenticated User Validation
+
+- GET `/api/users/2`
+- Pass Bearer token in Authorization header
+- Validate status code `200`
+- Validate user ID and email response data
 
 ---
 
@@ -91,7 +100,7 @@ The framework is intentionally kept lightweight and simple based on assignment r
 
 ### Prerequisites
 
-- Java 11 or above
+- Java
 - Maven installed
 - Git installed
 
